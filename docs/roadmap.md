@@ -1,1 +1,1 @@
-# Roadmap\n\n- Improve workflow templates and starter examples\n- Strengthen sandboxing and execution reliability\n- Expand observability and analytics\n- Improve onboarding and documentation\n- Add more community contribution guides\n
+# Roadmap\n\n- Improve workflow templates and starter examples\n- Strengthen sandboxing and execution reliability\n- Expand observability and analytics\n- Improve onboarding and documentation\n- Add more community contribution guides\n- Introduce more starter workflows\n
