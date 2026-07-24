@@ -1,0 +1,1 @@
+name: Labeler\non:\n  pull_request:\n    types: [opened, synchronize]\njobs:\n  label:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/labeler@v5\n
