@@ -1,7 +1,1 @@
-# Architecture overview
-
-FlowAgent is split into three parts:
-
-- web: the frontend and workflow canvas
-- backend: the execution engine and queue worker
-- mcp: the MCP server that exposes published workflows
+# Architecture overview\n\nFlowAgent is split into three parts:\n\n- web: the frontend and workflow canvas\n- backend: the execution engine and queue worker\n- mcp: the MCP server that exposes published workflows\n\nThe runtime is coordinated through Redis-backed execution and Postgres-backed persistence.\n
