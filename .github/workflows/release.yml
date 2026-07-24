@@ -1,0 +1,1 @@
+name: Release\non:\n  push:\n    tags:\n      - 'v*'\njobs:\n  publish:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - name: Show release info\n        run: echo 'Release workflow ready'\n
