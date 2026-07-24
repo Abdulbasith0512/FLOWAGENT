@@ -1,0 +1,28 @@
+# dependencies
+node_modules/
+.pnp.*
+**/.venv/
+**/__pycache__/
+*.egg-info/
+
+# builds
+web/.next/
+web/out/
+web/build/
+*.tsbuildinfo
+web/next-env.d.ts
+
+# env / secrets
+.env
+.env.*
+!.env.example
+!.env.prod.example
+
+# editor / os
+.DS_Store
+*.pem
+.vercel
+
+# logs
+*-debug.log*
+*.log

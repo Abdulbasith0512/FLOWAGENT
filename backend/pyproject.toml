@@ -1,0 +1,38 @@
+[project]
+name = "flowagent-backend"
+version = "0.1.0"
+description = "FlowAgent execution engine - builds and runs LangGraph workflows, streams live status over WebSocket."
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi==0.136.3",
+    "uvicorn[standard]==0.34.0",
+    "websockets==14.2",
+    "pydantic==2.10.6",
+    "pydantic-settings==2.7.1",
+    "structlog==25.1.0",
+    "sqlalchemy==2.0.37",
+    "greenlet==3.1.1",
+    "asyncpg==0.30.0",
+    "langgraph==1.2.4",
+    "langgraph-checkpoint-redis==0.4.1",
+    "litellm==1.87.0",
+    "httpx==0.28.1",
+    "resend==2.6.0",
+    "tavily-python==0.5.1",
+    "simpleeval==1.0.3",
+    "arq==0.26.3",
+    "redis==5.2.1",
+    "cryptography==44.0.0",
+    "jinja2==3.1.6",
+    "croniter==6.0.0",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.pyrefly]
+python-interpreter = ".venv/bin/python"

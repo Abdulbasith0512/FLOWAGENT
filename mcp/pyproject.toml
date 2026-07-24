@@ -1,0 +1,24 @@
+[project]
+name = "flowagent-mcp"
+version = "0.1.0"
+description = "FlowAgent MCP server - auto-registers each saved workflow as an MCP tool callable from Claude Desktop."
+requires-python = ">=3.12"
+dependencies = [
+    "fastmcp==3.4.0",
+    "pydantic==2.12.2",
+    "pydantic-settings==2.7.1",
+    "structlog==25.1.0",
+    "sqlalchemy==2.0.37",
+    "asyncpg==0.30.0",
+    "httpx==0.28.1",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.pyrefly]
+python-interpreter = ".venv/bin/python"

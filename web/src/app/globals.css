@@ -1,0 +1,303 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: oklch(0.99 0.004 95);
+  --surface: oklch(1 0 0);
+  --surface-2: oklch(0.975 0.005 95);
+  --fg: oklch(0.22 0.01 60);
+  --fg-muted: oklch(0.55 0.01 60);
+  --border: oklch(0.91 0.006 80);
+  --border-strong: oklch(0.85 0.008 80);
+  --grid: oklch(0.9 0.006 80);
+
+  --accent: oklch(0.7 0.17 55);
+  --accent-hover: oklch(0.66 0.18 52);
+  --accent-fg: oklch(0.99 0.01 95);
+  --accent-tint: oklch(0.95 0.04 65);
+
+  --ok: oklch(0.7 0.16 150);
+  --run: oklch(0.65 0.16 250);
+  --err: oklch(0.62 0.21 25);
+
+  --radius: 0.5rem;
+}
+
+.dark {
+  --bg: oklch(0.17 0.008 60);
+  --surface: oklch(0.21 0.008 60);
+  --surface-2: oklch(0.24 0.009 60);
+  --fg: oklch(0.93 0.005 80);
+  --fg-muted: oklch(0.65 0.01 70);
+  --border: oklch(0.3 0.008 70);
+  --border-strong: oklch(0.38 0.01 70);
+  --grid: oklch(0.28 0.008 70);
+
+  --accent: oklch(0.74 0.16 58);
+  --accent-hover: oklch(0.78 0.16 60);
+  --accent-fg: oklch(0.18 0.01 60);
+  --accent-tint: oklch(0.3 0.05 55);
+
+  --ok: oklch(0.72 0.16 152);
+  --run: oklch(0.7 0.15 250);
+  --err: oklch(0.68 0.19 25);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-grid: var(--grid);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-tint: var(--accent-tint);
+
+  --color-ok: var(--ok);
+  --color-run: var(--run);
+  --color-err: var(--err);
+
+  --font-sans: var(--font-sans-stack);
+  --font-mono: var(--font-sans-stack);
+  --font-serif: var(--font-serif-stack);
+
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.02em;
+  }
+}
+
+@utility kicker {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.6875rem;
+  color: var(--color-fg-muted);
+}
+
+@utility serif-display {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.02;
+}
+
+@utility dashed-spine {
+  background-image: linear-gradient(
+    var(--color-border-strong) 50%,
+    transparent 50%
+  );
+  background-size: 1px 14px;
+  background-repeat: repeat-y;
+  background-position: center;
+}
+
+@utility dashed-rail {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-border-strong) 50%,
+    transparent 50%
+  );
+  background-size: 14px 1px;
+  background-repeat: repeat-x;
+}
+
+@utility accent-flourish {
+  position: relative;
+}
+@utility accent-flourish-mark {
+  position: absolute;
+  left: 0;
+  bottom: -0.18em;
+  width: 100%;
+  height: 0.22em;
+  color: var(--color-accent);
+}
+
+@utility hatch {
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--color-border) 0,
+    var(--color-border) 1px,
+    transparent 1px,
+    transparent 7px
+  );
+}
+
+@utility grid-bg {
+  background-image:
+    linear-gradient(var(--color-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-grid) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+@utility dot-bg {
+  background-image: radial-gradient(var(--color-grid) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+@keyframes word-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.5em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ants {
+  to {
+    background-position: 16px 0, -16px 100%, 0 -16px, 100% 16px;
+  }
+}
+
+@keyframes live-pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in oklch, var(--color-accent) 55%, transparent);
+  }
+  70% {
+    box-shadow: 0 0 0 6px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes spine-draw {
+  from {
+    background-position-y: -14px;
+    opacity: 0;
+  }
+  to {
+    background-position-y: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes shine-sweep {
+  from {
+    transform: translateX(-120%) skewX(-20deg);
+  }
+  to {
+    transform: translateX(260%) skewX(-20deg);
+  }
+}
+
+@utility shine {
+  position: relative;
+  overflow: hidden;
+}
+@utility shine-streak {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 35%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklch, white 45%, transparent),
+    transparent
+  );
+  transform: translateX(-120%) skewX(-20deg);
+  pointer-events: none;
+}
+
+@utility cta-glow {
+  position: relative;
+  background-image: linear-gradient(
+    180deg,
+    color-mix(in oklch, var(--color-accent) 88%, white 12%),
+    var(--color-accent)
+  );
+  box-shadow:
+    0 1px 0 0 color-mix(in oklch, white 25%, transparent) inset,
+    0 10px 30px -10px color-mix(in oklch, var(--color-accent) 70%, transparent),
+    0 2px 8px -2px color-mix(in oklch, var(--color-accent) 50%, transparent);
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.15s ease;
+}
+@utility cta-glow-hover {
+  box-shadow:
+    0 1px 0 0 color-mix(in oklch, white 30%, transparent) inset,
+    0 16px 44px -10px color-mix(in oklch, var(--color-accent) 85%, transparent),
+    0 3px 12px -2px color-mix(in oklch, var(--color-accent) 60%, transparent);
+}
+
+@utility ants-border {
+  background-image:
+    linear-gradient(90deg, var(--color-accent) 50%, transparent 50%),
+    linear-gradient(90deg, var(--color-accent) 50%, transparent 50%),
+    linear-gradient(0deg, var(--color-accent) 50%, transparent 50%),
+    linear-gradient(0deg, var(--color-accent) 50%, transparent 50%);
+  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+  background-size: 16px 1px, 16px 1px, 1px 16px, 1px 16px;
+  background-position: 0 0, 0 100%, 0 0, 100% 0;
+  animation: ants 0.6s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ants-border,
+  .live-dot {
+    animation: none !important;
+  }
+  [data-word] {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+.react-flow__controls {
+  box-shadow: none;
+  --xy-controls-button-background-color: var(--color-surface);
+  --xy-controls-button-background-color-hover: var(--color-surface-2);
+  --xy-controls-button-color: var(--color-fg);
+  --xy-controls-button-color-hover: var(--color-fg);
+  --xy-controls-button-border-color: var(--color-border);
+}
+
+.react-flow__controls-button svg {
+  fill: var(--color-fg-muted);
+  fill-opacity: 1;
+}
+
+.react-flow__controls-button:hover svg {
+  fill: var(--color-fg);
+}

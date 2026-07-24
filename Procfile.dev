@@ -1,0 +1,6 @@
+# Alternative to `pnpm dev` for users of hivemind/overmind/foreman.
+# Run all three services with cleaner log multiplexing: `hivemind Procfile.dev`
+web: pnpm --filter web dev
+api: cd backend && uv run uvicorn app.main:app --reload --port 8000
+worker: cd backend && uv run arq app.queue.worker.WorkerSettings
+mcp: cd mcp && uv run python -m server
