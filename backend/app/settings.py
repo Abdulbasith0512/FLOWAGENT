@@ -30,6 +30,8 @@ class Settings(BaseSettings):
         case_sensitive=False,
     )
 
+    app_name: str = "FlowAgent"
+    environment_name: str = "development"
     database_url: str = "postgresql://postgres:postgres@localhost:5432/flowagent"
     anthropic_api_key: str = ""
 
@@ -60,6 +62,10 @@ class Settings(BaseSettings):
     @property
     def cors_origin_list(self) -> list[str]:
         return [o.strip() for o in self.cors_origins.split(",") if o.strip()]
+
+    @property
+    def service_name(self) -> str:
+        return f"{self.app_name} ({self.environment_name})"
 
     @property
     def use_redis_checkpointer(self) -> bool:
