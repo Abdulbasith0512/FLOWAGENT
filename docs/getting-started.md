@@ -1,6 +1,1 @@
-# Getting started
-
-1. Install dependencies
-2. Copy .env.example to .env
-3. Start PostgreSQL and Redis with Docker
-4. Run the development stack
+# Getting started\n\n1. Install dependencies\n2. Copy .env.example to .env\n3. Start PostgreSQL and Redis with Docker\n4. Run the development stack\n5. Open the web app and create your first workflow\n
