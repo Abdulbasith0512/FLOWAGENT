@@ -1,0 +1,1 @@
+# Contributor checklist\n\n- Read the contribution guide\n- Keep changes focused\n- Update docs when behavior changes\n- Test locally before opening a PR\n
