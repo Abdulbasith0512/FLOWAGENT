@@ -138,3 +138,10 @@ Built with a three-service architecture, a dual-language schema layer, graceful 
 Contributions are welcome. If you want to improve the product, add a new node, strengthen security, or improve the UI, feel free to open a pull request.
 
 Please see [CONTRIBUTING.md](CONTRIBUTING.md) for setup steps, guidelines, and contribution expectations.
+
+
+## Project links
+
+- [Roadmap](docs/roadmap.md)
+- [Architecture overview](docs/architecture-overview.md)
+- [Getting started](docs/getting-started.md)
