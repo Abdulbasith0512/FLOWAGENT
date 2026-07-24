@@ -1,0 +1,7 @@
+# workflow-design
+
+This note captures a small but useful project detail for FlowAgent.
+
+- Topic: workflow-design
+- Purpose: keep the repository documentation organized and easy to scan.
+- Related area: docs and developer experience.
