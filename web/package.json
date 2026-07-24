@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@phosphor-icons/react": "2.1.10",
-    "@types/dagre": "0.7.52",
+    "@types/dagre": "0.7.54",
     "@xyflow/react": "12.11.0",
     "better-auth": "1.6.14",
     "class-variance-authority": "0.7.1",
