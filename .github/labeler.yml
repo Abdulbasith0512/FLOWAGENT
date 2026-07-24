@@ -1,0 +1,1 @@
+bug:\n  - '\\bfix\\b'\nenhancement:\n  - '\\bfeature\\b'\ndocs:\n  - 'docs'\n
