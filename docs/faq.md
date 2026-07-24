@@ -1,4 +1,1 @@
-# FAQ
-
-## Can I run FlowAgent locally?
-Yes. The repository includes Docker-based local services and a development script.
+# FAQ\n\n## Can I run FlowAgent locally?\nYes. The repository includes Docker-based local services and a development script.\n\n## Can I publish workflows as MCP tools?\nYes. Published workflows are exposed as MCP tools through the MCP server.\n
