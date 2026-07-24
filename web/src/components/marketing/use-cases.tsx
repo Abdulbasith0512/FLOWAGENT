@@ -9,6 +9,7 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "@/components/marketing/reveal";
 import { SpotlightCard } from "@/components/marketing/spotlight-card";
+import { pluralize } from "@/lib/format";
 
 const CASES = [
   {
@@ -71,7 +72,7 @@ export function UseCases() {
             <p className="mt-2 text-sm leading-relaxed text-fg-muted">{c.body}</p>
             <span className="mt-4 inline-flex w-fit items-center gap-1.5 font-mono text-xs text-fg-muted">
               <span className="h-1.5 w-1.5 rounded-full bg-ok" />
-              {c.chips.length} nodes
+              {pluralize(c.chips.length, "node")}
             </span>
           </SpotlightCard>
         </Reveal>
