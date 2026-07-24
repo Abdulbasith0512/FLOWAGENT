@@ -1,0 +1,15 @@
+name: Bug report
+description: Report a reproducible issue
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for reporting a bug.
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      placeholder: Describe the issue clearly.
+    validations:
+      required: true
