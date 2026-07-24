@@ -1,0 +1,1 @@
+# Tech stack\n\nFlowAgent uses Next.js, FastAPI, LangGraph, Redis, Postgres, Docker, and MCP.\n
