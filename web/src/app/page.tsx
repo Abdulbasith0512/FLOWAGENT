@@ -19,6 +19,9 @@ import { SiteNav } from "@/components/marketing/site-nav";
 import { SiteFooter } from "@/components/marketing/site-footer";
 import { CtaButton } from "@/components/marketing/cta-button";
 import { getSession } from "@/lib/session";
+import { joinList } from "@/lib/format";
+
+const HIGHLIGHTS = ["canvas", "live runs", "MCP tools"];
 
 const STEPS = [
   {
@@ -78,6 +81,10 @@ export default async function Home() {
             <p className="mt-7 max-w-xl text-lg text-fg-muted">
               Ship an AI workflow in minutes, not a sprint. Draw it on a canvas,
               watch it run live, and call it from Claude like any other tool.
+            </p>
+            <p className="mt-4 max-w-lg text-sm text-fg-muted">
+              Built for {joinList(HIGHLIGHTS)} so the project feels like a real
+              product, not a demo shell.
             </p>
             <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
               <CtaButton href={startHref}>Start building</CtaButton>
