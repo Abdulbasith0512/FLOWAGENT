@@ -1,13 +1,1 @@
-name: CI
-
-on:
-  push:
-  pull_request:
-
-jobs:
-  sanity-check:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Show repository info
-        run: echo "FlowAgent CI check"
+name: CI\n\non:\n  push:\n  pull_request:\n\njobs:\n  sanity-check:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - name: Show repository info\n        run: echo 'FlowAgent CI check'\n      - name: Confirm repository structure\n        run: test -d web && test -d backend && test -d mcp\n
