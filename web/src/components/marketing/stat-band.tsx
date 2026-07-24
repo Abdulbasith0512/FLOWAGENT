@@ -6,6 +6,7 @@ const STATS = [
   {
     num: 7,
     label: "node types",
+    detail: "Coverage across search, code, HTTP, email, branching, and approvals.",
     sub: [
       { n: "LLM", t: "search, code" },
       { n: "HTTP", t: "email, branch" },
@@ -15,6 +16,7 @@ const STATS = [
   {
     num: 0,
     label: "lines of glue code",
+    detail: "The canvas stays close to the runtime instead of splitting it apart.",
     sub: [
       { n: "drag", t: "to add a node" },
       { n: "wire", t: "to connect" },
@@ -23,6 +25,7 @@ const STATS = [
   {
     text: "live",
     label: "execution streaming",
+    detail: "Runs are visible as they move through the graph.",
     sub: [
       { n: "resume", t: "from checkpoint" },
       { n: "survive", t: "restarts" },
@@ -31,6 +34,7 @@ const STATS = [
   {
     num: 1,
     label: "tool call from Claude",
+    detail: "Every published workflow becomes a callable MCP tool.",
     sub: [
       { n: "MCP", t: "auto-registered" },
       { n: "name", t: "to trigger" },
@@ -86,6 +90,9 @@ export function StatBand() {
                 </div>
               ))}
             </div>
+            <p className={["mt-4 text-xs leading-relaxed", s.featured ? "text-bg/70" : "text-fg-muted"].join(" ")}>
+              {s.detail}
+            </p>
           </SpotlightCard>
         ))}
       </div>
