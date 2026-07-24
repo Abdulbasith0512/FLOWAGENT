@@ -40,7 +40,7 @@ async def lifespan(app: FastAPI):
 
 def create_app() -> FastAPI:
     settings = get_settings()
-    app = FastAPI(title="FlowAgent Engine", version="0.1.0", lifespan=lifespan)
+    app = FastAPI(title=settings.service_name, version="0.1.0", lifespan=lifespan)
 
     app.add_middleware(
         CORSMiddleware,
@@ -55,6 +55,8 @@ def create_app() -> FastAPI:
         return {
             "ok": True,
             "service": "backend",
+            "service_name": settings.service_name,
+            "environment": settings.environment_name,
             "checkpointer": "redis" if settings.use_redis_checkpointer else "memory",
         }
 
