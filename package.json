@@ -1,0 +1,25 @@
+{
+  "name": "flowagent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Visual AI workflow builder - drag nodes onto a canvas, run them as a live LangGraph, expose each workflow as an MCP tool.",
+  "packageManager": "pnpm@10.12.2",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n web,api,worker,mcp -c cyan,magenta,green,yellow \"pnpm dev:web\" \"pnpm dev:api\" \"pnpm dev:worker\" \"pnpm dev:mcp\"",
+    "dev:web": "pnpm --filter web dev",
+    "dev:api": "cd backend && uv run uvicorn app.main:app --reload --port 8000",
+    "dev:worker": "cd backend && uv run arq app.queue.worker.WorkerSettings",
+    "dev:mcp": "cd mcp && FASTMCP_SHOW_SERVER_BANNER=false uv run python -m server",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "db:migrate": "pnpm --filter web db:migrate",
+    "build:web": "pnpm --filter web build",
+    "lint": "pnpm --filter web lint"
+  },
+  "devDependencies": {
+    "concurrently": "9.1.2"
+  }
+}

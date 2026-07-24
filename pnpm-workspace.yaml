@@ -1,0 +1,11 @@
+packages:
+  - web
+
+# Native deps that ship prebuilt binaries; skip pnpm's build-script approval prompt.
+ignoredBuiltDependencies:
+  - sharp
+  - unrs-resolver
+
+# kysely 0.29.x dropped a named export that better-auth's kysely-adapter imports.
+overrides:
+  kysely: 0.28.17

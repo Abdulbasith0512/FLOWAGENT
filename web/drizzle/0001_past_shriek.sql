@@ -1,0 +1,1 @@
+ALTER TABLE "workflows" ADD COLUMN "schema_version" integer DEFAULT 1 NOT NULL;
